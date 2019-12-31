@@ -57,6 +57,10 @@ main {
     padding-top: 68px;
 }
 
+ul {
+    list-style-position: inside;
+}
+
 /* COMPONENTS */
 
 /* COMPONENTS - LAYOUT */
@@ -205,8 +209,8 @@ main {
 }
 
 .footer_copy {
-    background: var(--primary-color);
-    color: #111;
+    background: #000;
+    color: #eee;
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: right;
@@ -214,7 +218,7 @@ main {
 }
 
 .footer_copy a {
-    color: #eee;
+    color: var(--primary-color);
 }
 
 .footer_copy a:hover {
@@ -222,7 +226,7 @@ main {
 }
 
 .footer_copy a:active {
-    color: #ffffff;
+    color: #27bbff;
 }
 
 /* COMPONENTS - MODULES */
