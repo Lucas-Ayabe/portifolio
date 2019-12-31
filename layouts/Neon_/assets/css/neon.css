@@ -442,6 +442,14 @@ a {
     :root {
         font-size: 12px;
     }
+
+    .form_group {
+        width: 100%;
+    }
+
+    .form_input {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 480px) {
