@@ -11,7 +11,7 @@
 }
 
 html, body {
-    font-family: 'Fira sans', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     background: #eaedf0;
     color: #111;
     overflow: hidden;
@@ -233,7 +233,7 @@ ul {
 /* COMPONENTS - MODULES */
 
 .logo {
-    font-family: 'Fira code', monospace;
+    font-family: 'Fira Code', monospace;
     font-weight: 100;
     letter-spacing: -2px;
     font-size: 1.5em;
@@ -261,7 +261,7 @@ ul {
     padding: 10px 20px;
     border: none;
     text-decoration: none;
-    font-family: 'Fira sans', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     color: #fff;
     font-size: 1em;
     background: var(--primary-color);
