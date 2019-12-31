@@ -195,7 +195,8 @@ ul {
     transition: all .3s ease-in-out;
 }
 
-.footer_social img {
+.footer_social img,
+.footer_social svg {
     width: 30px;
     height: 30px;
 }
@@ -213,7 +214,7 @@ ul {
     color: #eee;
     padding-top: 10px;
     padding-bottom: 10px;
-    text-align: right;
+    text-align: center;
     font-weight: 400;
 }
 
