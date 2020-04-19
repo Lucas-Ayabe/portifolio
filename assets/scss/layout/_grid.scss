@@ -1,0 +1,165 @@
+.column-with-breakpoint-and-value {
+    flex: 0 0 100%;
+}
+
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    list-style: none;
+
+    &.has-equal-height {
+        align-items: stretch;
+    }
+
+    &.is-justify-start {
+        justify-content: flex-start;
+    }
+
+    &.is-justify-center {
+        justify-content: center;
+    }
+
+    &.is-justify-end {
+        justify-content: flex-end;
+    }
+
+    &.is-justify-around {
+        justify-content: space-around;
+    }
+
+    &.is-justify-between {
+        justify-content: space-between;
+    }
+
+    &.is-justify-evenly {
+        justify-content: space-around;
+        justify-content: space-evenly;
+    }
+
+    &.is-align-start {
+        align-items: flex-start;
+    }
+
+    &.is-align-center {
+        align-items: center;
+    }
+
+    &.is-align-end {
+        align-items: flex-end;
+    }
+
+    &.is-align-stretch {
+        align-items: stretch;
+    }
+
+    &.is-align-baseline {
+        align-items: baseline;
+    }
+
+    &.is-content-start {
+        align-content: flex-start;
+    }
+
+    &.is-content-center {
+        align-content: center;
+    }
+
+    &.is-content-end {
+        align-content: flex-end;
+    }
+
+    &.is-content-around {
+        align-content: space-around;
+    }
+
+    &.is-content-between {
+        align-content: space-between;
+    }
+
+    &.is-content-evenly {
+        align-content: space-around;
+        align-content: space-evenly;
+    }
+}
+
+.column {
+    padding: $gap;
+    max-width: 100%;
+    flex: 1;
+
+    @each $breakpoint, $breakpointValue in $breakpoints {
+        &[class*="is-#{$breakpoint}-"] {
+            flex: 0 1 100%;
+        }
+    }
+
+    &.is-no-expansible {
+        flex-grow: 0;
+    }
+}
+
+@for $col from 1 through $cols {
+    $width: (100%/$cols) * $col;
+      
+    .column.is-#{$col} {
+        flex-basis: $width;
+        flex-grow: 0;
+        flex-shrink: 1;
+    }
+}
+
+@each $breakpoint, $breakpointValue in $breakpoints {
+    @for $col from 1 through $cols {
+        $width: (100%/$cols) * $col;
+        
+        
+        .column.is-#{$breakpoint}-#{$col} {
+            
+            @include min-width($breakpointValue) {
+                flex-grow: 0;
+                flex-basis: $width;
+            }
+        }
+    }
+}
+
+.column.is-xsm,
+.column.is-sm, 
+.column.is-md,
+.column.is-lg,
+.column.is-xlg
+{
+    flex-basis: 100%;
+    flex-grow: 0;
+}
+
+@include min-width(getBreakpointValue("xsm")) {
+    .column.is-xsm {
+        flex-basis: 0;
+    }
+}
+
+@include min-width(getBreakpointValue("sm")) {
+    .column.is-sm {
+        flex-basis: 0;
+    }
+}
+
+@include min-width(getBreakpointValue("md")) {
+    .column.is-md {
+        flex-basis: 0;
+    }
+}
+
+@include min-width(getBreakpointValue("lg")) {
+    .column.is-lg {
+        flex-basis: 0;
+    }
+}
+
+@include min-width(getBreakpointValue("xlg")) {
+    .column.is-xlg {
+        flex-basis: 0;
+    }
+}

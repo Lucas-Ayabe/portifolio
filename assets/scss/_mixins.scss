@@ -1,0 +1,33 @@
+@mixin title {
+    font-weight: 500;
+    font-size: $font-size-4;
+    margin-bottom: $space-1;
+}
+
+@mixin max-width($breakpoint) {
+    @media screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin min-width($breakpoint) {
+    @media screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@function getBreakpoint($breakpointName) {
+    @each $breakpoint, $breakpointValue in $breakpoints {
+        @if $breakpointName == $breakpoint{
+            @return $breakpoint;
+        }
+    }
+}
+
+@function getBreakpointValue($breakpointName) {
+    @each $breakpoint, $breakpointValue in $breakpoints {
+        @if $breakpointName == $breakpoint{
+            @return $breakpointValue;
+        }
+    }
+}

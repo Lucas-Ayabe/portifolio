@@ -1,0 +1,19 @@
+.avatar {
+    &__image {
+        width: 150px;
+        height: 150px;
+        max-width: 100%;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, .12);
+        box-shadow: $shadow-1;
+        overflow: hidden;
+    
+        .avatar.is-cover & {
+            object-fit: cover;
+        }
+
+        .avatar.is-contain & {
+            object-fit: contain;
+        }
+    }
+}

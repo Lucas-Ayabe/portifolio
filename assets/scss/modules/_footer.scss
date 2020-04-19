@@ -1,0 +1,14 @@
+.footer {
+    background: linear-gradient(65deg,#A0258E 10%, #EA1E7D 70%);
+    color: $light-color;
+    padding: $space-3;
+    text-align: center;
+    
+    &__copy {
+        line-height: initial;
+    }
+
+    .has-sidenav & {
+        width: 100%;
+    }
+}

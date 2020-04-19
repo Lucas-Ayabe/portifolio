@@ -1,0 +1,108 @@
+.search {
+    position: relative;
+    z-index: 5;
+
+    &__button {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+        transform: translate(0, -50%);
+    }
+
+    &__input {
+        width: 100%;
+        background: #ffffff;
+        border-radius: 50px;
+        border: 2px solid #eee;
+        box-shadow: $shadow-1;
+        padding: 10px 15px;
+        padding-left: 45px;
+        font-size: $font-size-2;
+    }
+
+    &__filter {
+        width: calc(100% - 50px);
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%);
+
+        &.is-active {
+            top: calc(100% - 4px);
+            box-shadow: 0 3px 3px rgba(0, 0, 0, .3);
+
+            .search__inner {
+                padding: 20px;
+                opacity: 1;
+                pointer-events: all;
+                z-index: 1;
+                max-height: 200px;
+            }
+
+            .search__toggler {
+                &::before {
+                    transform: translate(25%, -50%) rotate(45deg);
+                }
+        
+                &::after {
+                    transform: translate(-25%, -50%) rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    &__inner {
+        opacity: 0;
+        pointer-events: none;
+        z-index: -1;
+        overflow-y: auto;
+        max-height: 0;
+        padding: 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &__toggler {
+        background: #fff;
+        box-shadow: 0 4px 3px rgba(0, 0, 0, .3);
+        border-radius: 2px;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        position: absolute;
+        top: calc(100% - 2px);
+        color: transparent;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all .3s ease-in-out;
+        
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 3px;
+            background: #000;
+            top: 50%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            transition: all .6s ease-in-out;
+        }
+
+        &::before {
+            transform: translate(25%, -50%) rotate(-45deg);
+        }
+
+        &::after {
+            transform: translate(-25%, -50%) rotate(45deg);
+        }
+
+
+    }
+}

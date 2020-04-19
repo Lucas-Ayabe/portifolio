@@ -1,0 +1,149 @@
+<template>
+  <nav class="nav">
+    <ul class="nav__menu menu">
+      <li class="menu__item">
+        <nuxt-link to="/" class="menu__link">Home</nuxt-link>
+      </li>
+
+      <li class="menu__item">
+        <nuxt-link to="/about" class="menu__link">Sobre</nuxt-link>
+      </li>
+    </ul>
+  </nav>
+</template>
+
+<script>
+export default {
+  name: 'AppNav'
+}
+</script>
+
+<style lang="scss" scoped>
+.menu {
+  position: relative;
+  overflow-y: auto;
+  max-height: 100%;
+
+  @include min-width(getBreakpointValue('md')) {
+    max-height: auto;
+    overflow-y: initial;
+  }
+
+  &,
+  &__submenu {
+    list-style: none;
+  }
+
+  @include min-width(getBreakpointValue('md')) {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  &__item {
+    display: block;
+
+    &.is-submenu-parent {
+      position: relative;
+
+      .menu__label {
+        cursor: pointer;
+        font-weight: bold;
+        pointer-events: none;
+      }
+
+      @include min-width(getBreakpointValue('md')) {
+        pointer-events: all;
+
+        .menu__label {
+          font-weight: normal;
+        }
+
+        &:hover .menu__submenu {
+          opacity: 1;
+          pointer-events: all;
+          z-index: 1;
+          background: #fff;
+          box-shadow: $shadow-1;
+        }
+      }
+
+      .menu__item {
+        font-weight: normal;
+      }
+    }
+  }
+
+  &__link {
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    padding: $space-2 $space-3;
+    margin-bottom: $space-2;
+    white-space: nowrap;
+    color: $dark-color;
+    border-radius: $radius-1;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+
+    @include min-width(getBreakpointValue('sm')) {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.03);
+      color: $primary-color;
+    }
+
+    .header.is-primary & {
+      color: $light-color;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #fff;
+      }
+    }
+
+    & &--icon {
+      margin-right: $space-2;
+      max-height: 24px;
+
+      &.is-right {
+        margin-right: 0;
+        margin-left: $space-2;
+      }
+
+      &.is-avatar {
+        width: 36px;
+        height: 36px;
+        max-height: 36px;
+        border-radius: 50%;
+        overflow: hidden;
+        object-fit: cover;
+        background: #ffffff;
+      }
+    }
+  }
+
+  @include min-width(getBreakpointValue('md')) {
+    &__submenu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      flex-direction: column;
+      justify-content: center;
+      transform: translateX(-50%);
+      pointer-events: none;
+      opacity: 0;
+      z-index: -1;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .has-sidenav &__link {
+    margin-bottom: 0;
+  }
+}
+</style>

@@ -1,0 +1,118 @@
+.button {
+    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    padding: $space-2 $space-3;
+    border-radius: $radius-1;
+    border: 1px solid transparent;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.4), 0 4px 4px rgba(0, 0, 0, 0.15);
+    color: $dark-color;
+    font-family: $font-family;
+    font-size: $font-size-1;
+    cursor: pointer;
+    white-space: nowrap;
+    position: relative;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.3s ease-in-out;
+
+    &__image {
+        margin-right: $space-2;
+
+        &.is-right {
+            margin-left: $space-2;
+        }
+    }
+}
+
+.button:hover {
+    transform: translate3d(0, -2px, 0);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5), 0 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.button.is-white {
+    color: $dark-color;
+    background: $light-color;
+    border-color: $light-color;
+}
+
+.button.is-white:hover {
+    background: #eee;
+    border-color: #eee;
+}
+
+@each $variant, $color in $colors {
+    .button.is-#{$variant} {
+        background: $color;
+
+        @if $variant == light {
+            color: $dark-color;
+        } @else {
+            color: $light-color;
+        }
+
+        &:hover {
+            background: lighten($color, 7%);
+        }
+    }
+
+    .button.is-ghost.is-#{$variant} {
+        color: $color;
+
+        &:hover {
+            background: $color;
+            border-color: $color;
+            
+            @if $variant == light {
+                color: $dark-color;
+            } @else {
+                color: $light-color;
+            }  
+        }
+    }
+
+    .button.is-link.is-#{$variant} {
+        color: $color;
+
+        &:hover {
+            background: transparentize($color: $color, $amount: .95);
+        }
+    }
+}
+
+.button.is-ghost,
+.button.is-link {
+    background: transparent;
+    border-color: currentColor;
+    box-shadow: none;
+
+    &:hover {
+        transform: translate(0, 0);
+    }
+}
+
+.button.is-link {
+    padding: $space-2;
+    border-color: transparent;
+}
+
+.button.is-rounded {
+    border-radius: 50px;
+}
+
+.button.is-no-rounded {
+    border-radius: 0;
+}
+
+.button.is-fab {
+    width: 50px;
+    height: 50px;
+    font-size: $font-size-2;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+}

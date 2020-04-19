@@ -1,0 +1,16 @@
+.main {
+    flex: 1;
+    padding-top: 64px;
+
+    .has-sidenav & {
+        flex: 0;
+        padding-top: 0;
+        height: 100vh;
+        max-height: calc(100vh - 128px);
+        overflow-y: auto;
+
+        @include min-width(getBreakpointValue("md")) {
+            flex: 1;
+        }
+    }
+}
