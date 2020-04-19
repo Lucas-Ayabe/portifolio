@@ -1,7 +1,7 @@
 <template>
   <app-section class="container">
     <h1 class="section__title">Olá</h1>
-    <form name="contact" netlify>
+    <form ref="contactForm" name="contact" netlify>
       <p>
         <label>Name <input class="form__input" type="text" name="name"/></label>
       </p>
@@ -53,6 +53,10 @@ export default {
   name: 'Home',
   components: {
     AppSection
+  },
+  mounted() {
+    // eslint-disable-next-line
+    this.$refs.contactForm.setAttribute("netlify", "")
   }
 }
 </script>
