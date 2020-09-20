@@ -1,0 +1,9 @@
+.post a {
+  align-self: start;
+}
+
+.post .hljs {
+  padding: 1.5em;
+  border-radius: 6px;
+  font-family: "fira code", consolas, monospace;
+}

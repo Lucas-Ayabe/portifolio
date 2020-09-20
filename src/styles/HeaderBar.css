@@ -1,0 +1,26 @@
+.header-bar {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.header-bar > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header-bar > .container > .brand {
+  font-family: "fira code", consolas, monospace;
+  font-size: 1.25em;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-right: 1em;
+}
+
+.header-bar > .container > .brand:hover {
+  text-decoration: none;
+  color: var(--primary, hsl(220, 83%, 60%));
+}

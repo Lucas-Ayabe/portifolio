@@ -1,0 +1,70 @@
+/* Settings */
+:root {
+  --primary: hsl(220, 83%, 60%);
+  --primary-dark: hsl(220, 93%, 50%);
+  --vertical-rhythm: 1em;
+}
+
+/* Generic */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+  font-family: "Public Sans", sans-serif;
+  font-size: 100%;
+}
+
+/* Base */
+a {
+  color: var(--primary, hsl(220, 83%, 60%));
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Objects */
+.container {
+  display: block;
+  width: 100%;
+  max-width: calc(50rem - 2em);
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack > *,
+.stack.recursive * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stack > * + *,
+.stack.recursive * + * {
+  margin-top: var(--vertical-rhythm, 1em);
+}
+
+.unstiled-list {
+  list-style: none;
+}
+
+/* Trumps */

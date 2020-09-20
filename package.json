@@ -1,33 +1,41 @@
 {
-  "name": "lucas-ayabe",
-  "version": "1.0.0",
-  "description": "portifolio de Lucas Akira Ayabe",
-  "author": "Lucas-Ayabe",
+  "name": "gatsby-starter-hello-world",
   "private": true,
+  "description": "A simplified bare-bones starter for Gatsby",
+  "version": "0.1.0",
+  "license": "0BSD",
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.6",
-    "@nuxtjs/dotenv": "^1.4.0",
-    "@nuxtjs/pwa": "^3.0.0-0",
-    "nuxt": "^2.0.0"
+    "@mdx-js/mdx": "^1.6.18",
+    "@mdx-js/react": "^1.6.18",
+    "gatsby": "^2.24.50",
+    "gatsby-plugin-mdx": "^1.2.40",
+    "gatsby-plugin-postcss": "^2.3.12",
+    "gatsby-source-filesystem": "^2.3.28",
+    "gatsby-transformer-remark": "^2.8.33",
+    "postcss-font-magician": "^2.3.1",
+    "postcss-preset-env": "^6.7.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-highlight": "^0.12.0"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^2.0.0",
-    "@nuxtjs/eslint-module": "^1.0.0",
-    "@nuxtjs/style-resources": "^1.0.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^6.1.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-nuxt": ">=0.4.2",
-    "eslint-plugin-prettier": "^3.1.2",
-    "node-sass": "^4.13.1",
-    "prettier": "^1.19.1",
-    "sass-loader": "^8.0.2"
+    "eslint-config-react-app": "^5.2.1",
+    "prettier": "2.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lucas-Ayabe/portifolio"
+  },
+  "bugs": {
+    "url": "https://github.com/Lucas-Ayabe/portifolio/issues"
   }
 }

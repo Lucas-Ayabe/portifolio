@@ -1,0 +1,14 @@
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu > .list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.menu > .list > .item + .item {
+    margin-left: 1em;
+}
