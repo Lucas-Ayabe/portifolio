@@ -1,5 +1,5 @@
 import React from "react"
-import "../styles/grid.css"
+import "../styles/Grid.css"
 
 const GridColumn = props => {
   const { col, className, ...attrs } = props
