@@ -1,4 +1,36 @@
-.my-perfil {
-  width: 100%;
+.my-perfil > .photo {
+  border-radius: 6px;
   max-width: 315px;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 767.99px) {
+  .my-perfil {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2),
+      0 2px 4px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+
+  .my-perfil > .photo {
+    max-width: 100%;
+    height: auto;
+    transform: translate3d(0, -20px, 0);
+  }
+}
+
+@media screen and (max-width: 767.99px) {
+  .my-perfil {
+    width: 250px;
+    height: 250px;
+    margin: auto;
+  }
 }

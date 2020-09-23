@@ -24,6 +24,14 @@ module.exports = {
           require(`postcss-preset-env`)({ stage: 0 }),
           require(`postcss-font-magician`)({
             foundries: ["google"],
+            protocol: "https:",
+            formats: "woff2 woff ttf",
+            variants: {
+              Prompt: {
+                400: ["woff woff2 ttf"],
+                600: ["woff woff2 ttf"],
+              },
+            },
           }),
         ],
       },

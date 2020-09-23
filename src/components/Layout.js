@@ -1,15 +1,21 @@
-import React from "react"
-import { useStaticQuery, Link, graphql } from "gatsby"
+import React, { useState } from "react"
 import HeaderBar from "./HeaderBar"
 import Container from "./Container"
 import Menu from "./Menu"
 import MenuLink from "./MenuLink"
+import MenuToggler from "./MenuToggler"
 
-export default function Layout({ children }) {
+export default function Layout({ children, ...props }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   return (
     <div>
       <HeaderBar>
-        <Menu>
+        <MenuToggler
+          isActive={isMenuOpen}
+          onClick={() => setIsMenuOpen(state => !state)}
+        />
+        <Menu isOpen={isMenuOpen}>
           <MenuLink to="/posts">Posts</MenuLink>
           <MenuLink to="/">Contato</MenuLink>
         </Menu>

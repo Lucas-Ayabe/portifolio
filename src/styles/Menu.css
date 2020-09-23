@@ -1,14 +1,33 @@
 .menu {
-    display: flex;
-    align-items: center;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: -100vh;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  opacity: 0;
+  background: #fff;
+  z-index: 2;
+  transition: top 0.3s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.menu.is-open {
+  top: 0;
+  opacity: 1;
 }
 
 .menu > .list {
-    list-style: none;
-    display: flex;
-    align-items: center;
+  list-style: none;
+  text-align: center;
 }
 
 .menu > .list > .item + .item {
-    margin-left: 1em;
+  margin-top: 1em;
+}
+
+.menu > .list > .item > .link {
+  font-size: 2em;
 }

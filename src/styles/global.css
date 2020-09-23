@@ -1,5 +1,6 @@
 /* Settings */
 :root {
+  --family: Prompt, Helvetica, Arial, sans-serif;
   --primary: hsl(220, 83%, 60%);
   --primary-dark: hsl(220, 93%, 50%);
   --vertical-rhythm: 1em;
@@ -15,8 +16,28 @@
 html,
 body {
   min-height: 100vh;
-  font-family: "Public Sans", sans-serif;
+  font-family: var(--family, Prompt, Helvetica, Arial, sans-serif);
   font-size: 110%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong {
+  font-weight: 600;
 }
 
 /* Base */
@@ -81,9 +102,9 @@ a:hover {
   content: "";
   position: absolute;
   top: 50%;
-  left: -50%;
-  width: 100%;
-  height: 125%;
+  left: -60%;
+  width: 125%;
+  height: 75%;
   transform: translate3d(0, -50%, 0);
   background: var(--primary);
   opacity: 0.9;
@@ -101,4 +122,10 @@ a:hover {
 
 .has-center-align {
   text-align: center;
+}
+
+@media screen and (max-width: 567.999px) {
+  .min-sm-only {
+    display: none;
+  }
 }
