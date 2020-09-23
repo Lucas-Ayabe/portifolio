@@ -1,5 +1,5 @@
 import React from "react"
-import "../styles/HeaderBar.css"
+import "../styles/Grid.css"
 
 const Grid = props => {
   const { reverse, className, ...attrs } = props
