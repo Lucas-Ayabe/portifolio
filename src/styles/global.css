@@ -91,7 +91,17 @@ a:hover {
 }
 
 .title {
-  font-size: 4rem;
+  font-size: 3em;
+}
+
+.title.-sm {
+  font-size: 1.75em;
+}
+
+@media screen and (min-width: 480px) {
+  .title {
+    font-size: 4em;
+  }
 }
 
 /* Trumps */
@@ -123,11 +133,17 @@ a:hover {
 }
 
 .has-center-align {
-  text-align: center;
+  text-align: center !important;
 }
 
 @media screen and (max-width: 567.999px) {
   .min-sm-only {
-    display: none;
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .has-md-left-align {
+    text-align: left !important;
   }
 }

@@ -15,14 +15,28 @@
   flex: 1;
 }
 
-.grid > .column.is-md-5 {
+.grid > .column.is-sm-8,
+.grid > .column.is-md-5,
+.grid > .column.is-md-6 {
   flex-basis: 100%;
   flex-shrink: 0;
+}
+
+@media screen and (min-width: 568px) {
+  .grid > .column.is-sm-8 {
+    flex-basis: calc((100% / 12) * 10);
+    max-width: calc((100% / 12) * 10);
+  }
 }
 
 @media screen and (min-width: 768px) {
   .grid > .column.is-md-5 {
     flex-basis: calc((100% / 12) * 5);
     max-width: calc((100% / 12) * 5);
+  }
+
+  .grid > .column.is-md-6 {
+    flex-basis: calc((100% / 12) * 6);
+    max-width: calc((100% / 12) * 6);
   }
 }

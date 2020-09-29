@@ -1,3 +1,7 @@
+#content.content {
+  position: relative;
+}
+
 .my-perfil > .photo {
   border-radius: 6px;
   max-width: 315px;
@@ -9,7 +13,7 @@
 
 @media screen and (max-width: 767.99px) {
   #content.content {
-    padding-top: 0;
+    margin-top: -3rem;
   }
 
   .my-perfil {

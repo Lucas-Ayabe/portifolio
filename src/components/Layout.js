@@ -21,9 +21,7 @@ export default function Layout({ children }) {
         </Menu>
       </HeaderBar>
 
-      <Container id="content" className="content section">
-        {children}
-      </Container>
+      <Container className="section">{children}</Container>
     </div>
   )
 }

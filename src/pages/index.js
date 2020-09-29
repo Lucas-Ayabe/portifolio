@@ -1,5 +1,8 @@
 import React from "react"
 import Lucas from "../../static/lucas.jpg"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faMobileAlt, faGlobe } from "@fortawesome/free-solid-svg-icons"
+import { faHtml5, faPhp } from "@fortawesome/free-brands-svg-icons"
 import "../styles/index.css"
 import { Link } from "gatsby"
 import Layout from "../components/Layout"
@@ -10,7 +13,7 @@ import GridColumn from "../components/GridColumn"
 export default function Home() {
   return (
     <Layout>
-      <section style={{ position: "relative" }}>
+      <section id="content" className="content">
         <Grid reverse>
           <GridColumn>
             <Stack>
@@ -47,8 +50,70 @@ export default function Home() {
         </Grid>
       </section>
 
-      <section style={{ marginTop: "4em" }}>
+      <section
+        className="has-center-align has-md-left-align"
+        style={{ marginTop: "4em" }}
+      >
         <h2 className="title">Minhas Skills</h2>
+
+        <Grid style={{ marginTop: "1.5em" }}>
+          <GridColumn col="is-md-6">
+            <div style={{ fontSize: ".9em" }}>
+              <Stack style={{ display: "block" }} flow="16px">
+                <FontAwesomeIcon size="3x" icon={faHtml5} />
+                <h2 className="title -sm">Front-End</h2>
+                <p>
+                  Manda um hello e vamos ver como dar vida as suas telas - seja
+                  do seu sistema, seja do seu site -{" "}
+                  <strong>da ideia para o código</strong> da melhor forma
+                  possível.
+                </p>
+              </Stack>
+            </div>
+          </GridColumn>
+
+          <GridColumn col="is-md-6">
+            <div style={{ fontSize: ".9em" }}>
+              <Stack style={{ display: "block" }} flow="16px">
+                <FontAwesomeIcon size="3x" icon={faGlobe} />
+                <h2 className="title -sm">Web Design</h2>
+                <p>
+                  Essa habilidade me permite te ajudar a criar um site bonito,
+                  moderno, atualizado as últimas tendências, aplicando técnicas
+                  e conceitos e <strong>UI e UX design</strong>.
+                </p>
+              </Stack>
+            </div>
+          </GridColumn>
+
+          <GridColumn col="is-md-6">
+            <div style={{ fontSize: ".9em" }}>
+              <Stack style={{ display: "block" }} flow="16px">
+                <FontAwesomeIcon size="3x" icon={faMobileAlt} />
+                <h2 className="title -sm">Design responsivo</h2>
+                <p>
+                  Pode deixar comigo, que seu site/sistema irá{" "}
+                  <strong>se adaptar a qualquer dispositivo</strong> garantindo
+                  uma experiência customizada para os seus clientes.
+                </p>
+              </Stack>
+            </div>
+          </GridColumn>
+
+          <GridColumn col="is-md-6">
+            <div style={{ fontSize: ".9em" }}>
+              <Stack style={{ display: "block" }} flow="16px">
+                <FontAwesomeIcon size="3x" icon={faPhp} />
+                <h2 className="title -sm">Back-End</h2>
+                <p>
+                  Caso você precise de um desenvolvedor PHP para o seu back-end,
+                  estou a sua disposição, <strong>entregando a solução</strong>{" "}
+                  para você seguindo as melhores práticas.
+                </p>
+              </Stack>
+            </div>
+          </GridColumn>
+        </Grid>
       </section>
     </Layout>
   )
