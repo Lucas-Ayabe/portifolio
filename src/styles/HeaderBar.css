@@ -13,11 +13,8 @@
 }
 
 .header-bar > .container > .brand {
-  font-family: "fira code", consolas, monospace;
-  font-size: 1.25em;
-  font-weight: 500;
-  white-space: nowrap;
-  margin-right: 1em;
+  display: inline-flex;
+  align-items: center;
 }
 
 .header-bar > .container > .brand:hover {

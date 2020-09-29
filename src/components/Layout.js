@@ -5,7 +5,7 @@ import Menu from "./Menu"
 import MenuLink from "./MenuLink"
 import MenuToggler from "./MenuToggler"
 
-export default function Layout({ children, ...props }) {
+export default function Layout({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
@@ -21,7 +21,9 @@ export default function Layout({ children, ...props }) {
         </Menu>
       </HeaderBar>
 
-      <Container className="section">{children}</Container>
+      <Container id="content" className="content section">
+        {children}
+      </Container>
     </div>
   )
 }
