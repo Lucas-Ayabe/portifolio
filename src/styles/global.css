@@ -1,6 +1,7 @@
 /* Settings */
 :root {
   --family-heading: Montserrat, Helvetica, Arial, sans-serif;
+  --family-monospace: "Fira Code", consolas, monospace;
   --family: Prompt, Helvetica, Arial, sans-serif;
   --primary: hsl(220, 83%, 60%);
   --primary-dark: hsl(220, 93%, 50%);

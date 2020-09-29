@@ -4,7 +4,7 @@
 }
 
 .logo > .text {
-  font-family: "fira code", consolas, monospace;
+  font-family: var(--family-monospace, "Fira Code", consolas, monospace);
   font-size: 1.25em;
   font-weight: 500;
   white-space: nowrap;
