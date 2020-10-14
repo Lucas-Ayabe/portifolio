@@ -39,7 +39,7 @@ export default function Home() {
         await fetch(`https://api.github.com/graphql`, {
           method: "POST",
           headers: {
-            Authorization: "bearer 3a569a8a6b70469ba87849e7de1e6f714178f489",
+            Authorization: "bearer dfebb21d2542cbdfa8e1a250ac02224a7a18eb6b",
           },
           body: JSON.stringify({
             query,
