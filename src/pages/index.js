@@ -15,48 +15,10 @@ export default function Home() {
   const [repositorys, setRepositorys] = useState([])
 
   const getPinnedRepositorys = () => {
-    const query = `
-    {
-      user(login:"Lucas-Ayabe") {
-        pinnedItems(first: 6, types: [REPOSITORY, GIST]) {
-          totalCount
-          edges {
-            node {
-              ... on Repository {
-                id
-                url
-                name
-                description
-              }
-            }
-          }
-        }
-      }
-    }
-    `
-    ;(async () => {
-      const response = await (
-        await fetch(`https://api.github.com/graphql`, {
-          method: "POST",
-          headers: {
-            Authorization: "token acb00071e38e9802cecdf29887d8006639359bed",
-          },
-          body: JSON.stringify({
-            query,
-          }),
-        })
-      ).json()
-
-      const {
-        data: {
-          user: {
-            pinnedItems: { edges },
-          },
-        },
-      } = response
-
-      setRepositorys(edges.map(({ node }) => node))
-    })()
+    const endpoint = `https://api.github.com/users/Lucas-Ayabe/starred?sort=updated`
+    fetch(endpoint)
+      .then(r => r.json())
+      .then(setRepositorys)
   }
 
   useEffect(getPinnedRepositorys, [])
@@ -175,7 +137,7 @@ export default function Home() {
               <GridColumn key={repository.id} col="is-md-6">
                 <Card>
                   <Stack flow=".25em">
-                    <a href={repository.url}>
+                    <a href={repository.html_url}>
                       <h3>{repository.name}</h3>
                     </a>
                     <p>{repository.description}</p>
