@@ -4,9 +4,9 @@ import { Link } from "gatsby"
 import Container from "./Container"
 import Logo from "./Logo"
 
-export default ({ children }) => {
+export default ({ children, floating }) => {
   return (
-    <header className="header-bar">
+    <header className={`header-bar ${floating ? "is-floating" : ""}`}>
       <Container>
         <Link to="/" className="brand">
           <Logo />

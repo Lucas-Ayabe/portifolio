@@ -17,9 +17,23 @@
 
 html,
 body {
-  min-height: 100vh;
+  background: hsl(220, 10%, 98%);
+  height: auto;
+  max-height: 100vh;
+  overflow-y: hidden;
   font-family: var(--family, Prompt, Helvetica, Arial, sans-serif);
   font-size: 110%;
+}
+
+#layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+#layout > div {
+  flex: 1;
 }
 
 h1,

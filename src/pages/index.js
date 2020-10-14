@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Lucas from "../../static/lucas.jpg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMobileAlt, faGlobe } from "@fortawesome/free-solid-svg-icons"
@@ -9,8 +9,58 @@ import Layout from "../components/Layout"
 import Stack from "../components/Stack"
 import Grid from "../components/Grid"
 import GridColumn from "../components/GridColumn"
+import { Card } from "../components/Card"
 
 export default function Home() {
+  const [repositorys, setRepositorys] = useState([])
+
+  const getPinnedRepositorys = () => {
+    const query = `
+    {
+      user(login:"Lucas-Ayabe") {
+        pinnedItems(first: 6, types: [REPOSITORY, GIST]) {
+          totalCount
+          edges {
+            node {
+              ... on Repository {
+                id
+                url
+                name
+                description
+              }
+            }
+          }
+        }
+      }
+    }
+    `
+    ;(async () => {
+      const response = await (
+        await fetch(`https://api.github.com/graphql`, {
+          method: "POST",
+          headers: {
+            Authorization: "bearer 3a569a8a6b70469ba87849e7de1e6f714178f489",
+          },
+          body: JSON.stringify({
+            query,
+          }),
+        })
+      ).json()
+
+      const {
+        data: {
+          user: {
+            pinnedItems: { edges },
+          },
+        },
+      } = response
+
+      setRepositorys(edges.map(({ node }) => node))
+    })()
+  }
+
+  useEffect(getPinnedRepositorys, [])
+
   return (
     <Layout>
       <section id="content" className="content">
@@ -113,6 +163,26 @@ export default function Home() {
               </Stack>
             </div>
           </GridColumn>
+        </Grid>
+      </section>
+
+      <section className="section">
+        <h2 className="title">Últimos Projetos</h2>
+
+        <Grid>
+          {repositorys &&
+            repositorys.map(repository => (
+              <GridColumn key={repository.id} col="is-md-6">
+                <Card>
+                  <Stack flow=".25em">
+                    <a href={repository.url}>
+                      <h3>{repository.name}</h3>
+                    </a>
+                    <p>{repository.description}</p>
+                  </Stack>
+                </Card>
+              </GridColumn>
+            ))}
         </Grid>
       </section>
     </Layout>

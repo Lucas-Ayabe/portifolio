@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import Stack from "../components/Stack"
+import { Card } from "../components/Card"
 
 export default function Posts({ data }) {
   const totalPosts = data.allMdx.totalCount
@@ -14,11 +15,11 @@ export default function Posts({ data }) {
         <ul className="unstiled-list stack">
           {posts.map(({ node: post }) => (
             <li key={post.id}>
-              <div className="card">
+              <Card className="card">
                 <Link to={post.fields.slug}>
                   <h2>{post.frontmatter.title}</h2>
                 </Link>
-              </div>
+              </Card>
             </li>
           ))}
         </ul>
