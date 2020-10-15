@@ -17,7 +17,7 @@ export default function Home() {
   const getPinnedRepositorys = () => {
     const endpoint = `https://api.github.com/users/Lucas-Ayabe/starred?sort=updated`
     fetch(endpoint)
-      .then(r => r.json())
+      .then(response => response.json())
       .then(setRepositorys)
   }
 
@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <section id="content" className="content">
+      <section tabIndex="1" id="content" className="content">
         <Grid reverse>
           <GridColumn>
             <Stack>
@@ -43,13 +43,13 @@ export default function Home() {
                 <Link to="/posts">clicando aqui.</Link>
               </p>
               <p>
-                Mas também estou <strong>disponível para contato</strong> caso
-                você precise dos meus serviços para te ajudar com algum projeto
-                seu ou da sua empresa. É sério, eu posso te ajudar
-                principalmente <strong>em tarefas envolvendo front-end</strong>{" "}
-                de forma muito tranquila. Ainda com dúvidas da minha capacidade?
-                Dá uma olhada nos meus{" "}
-                <a href="#portfolio">últimos trabalhos.</a>
+                Mas também estou{" "}
+                <Link to="/contact">disponível para contato</Link> caso você
+                precise dos meus serviços para te ajudar com algum projeto seu
+                ou da sua empresa. É sério, eu posso te ajudar principalmente{" "}
+                <strong>em tarefas envolvendo front-end</strong> de forma muito
+                tranquila. Ainda com dúvidas da minha capacidade? Dá uma olhada
+                nos meus <a href="#portfolio">últimos trabalhos.</a>
               </p>
             </Stack>
           </GridColumn>
@@ -128,7 +128,7 @@ export default function Home() {
         </Grid>
       </section>
 
-      <section className="section">
+      <section id="portfolio" className="section">
         <h2 className="title">Últimos Projetos</h2>
 
         <Grid>

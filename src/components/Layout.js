@@ -24,10 +24,11 @@ export default function Layout({ children }) {
         />
         <Menu isOpen={isMenuOpen}>
           <MenuLink to="/posts">Posts</MenuLink>
-          <MenuLink to="/">Contato</MenuLink>
+          <MenuLink to="/contact">Contato</MenuLink>
         </Menu>
       </HeaderBar>
-      <Container className="section">{children}</Container>
+
+      <Container className="fade section">{children}</Container>
       <footer
         style={{
           background: "#fff",

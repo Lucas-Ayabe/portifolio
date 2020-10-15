@@ -29,6 +29,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  scroll-behavior: smooth;
   overflow-y: auto;
 }
 
@@ -119,6 +120,40 @@ a:hover {
   }
 }
 
+.button {
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--family);
+  padding: 1em 1.5em;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:focus {
+  outline: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.button.-primary {
+  background: var(--primary);
+  box-shadow: 0 2px 4px hsla(220, 83%, 60%, 0.8);
+  color: #fff;
+}
+
+.button.-primary:hover {
+  box-shadow: 0 5px 10px hsla(220, 83%, 60%, 0.5);
+}
+
+.button.-primary:active {
+  box-shadow: 0 7px 14px hsla(220, 83%, 40%, 0.3);
+}
+
 /* Trumps */
 
 .highlight-primary {
@@ -149,6 +184,17 @@ a:hover {
 
 .has-center-align {
   text-align: center !important;
+}
+
+.fade {
+  opacity: 0;
+  animation: fade 0.5s ease forwards;
+}
+
+@keyframes fade {
+  to {
+    opacity: initial;
+  }
 }
 
 @media screen and (max-width: 567.999px) {
