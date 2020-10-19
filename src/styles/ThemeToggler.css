@@ -2,7 +2,7 @@
   background-color: #fbc02d;
   color: var(--ui-color-inverted);
   position: fixed;
-  right: 10vh;
-  bottom: 10vh;
+  right: 3em;
+  bottom: 2.25em;
   z-index: 888;
 }
