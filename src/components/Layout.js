@@ -19,10 +19,8 @@ export default function Layout({ children }) {
   }
 
   useEffect(() => {
-    return () => {
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        setHasDarkTheme(true)
-      }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setHasDarkTheme(true)
     }
   }, [])
 
