@@ -137,7 +137,7 @@ export default function Home() {
               <GridColumn key={repository.id} col="is-md-6">
                 <Card>
                   <Stack flow=".25em">
-                    <a href={repository.html_url}>
+                    <a href={repository.homepage}>
                       <h3>{repository.name}</h3>
                     </a>
                     <p>{repository.description}</p>
