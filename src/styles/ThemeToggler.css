@@ -1,0 +1,8 @@
+.theme-toggler {
+  background-color: #fbc02d;
+  color: var(--ui-color-inverted);
+  position: fixed;
+  right: 10vh;
+  bottom: 10vh;
+  z-index: 888;
+}

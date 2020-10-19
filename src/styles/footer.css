@@ -1,0 +1,5 @@
+.footer {
+  background: var(--ui-color-inverted, #000);
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  text-align: center;
+}

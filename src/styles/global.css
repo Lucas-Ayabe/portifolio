@@ -3,8 +3,13 @@
   --family-heading: Montserrat, Helvetica, Arial, sans-serif;
   --family-monospace: "Fira Code", consolas, monospace;
   --family: Prompt, Helvetica, Arial, sans-serif;
+
   --primary: hsl(220, 83%, 60%);
   --primary-dark: hsl(220, 93%, 50%);
+  --ui-color: #000;
+  --ui-color-inverted: #fff;
+  --ui-background: hsl(220, 10%, 98%);
+
   --vertical-rhythm: 1em;
 }
 
@@ -17,7 +22,6 @@
 
 html,
 body {
-  background: hsl(220, 10%, 98%);
   height: auto;
   max-height: 100vh;
   overflow-y: hidden;
@@ -31,6 +35,8 @@ body {
   height: 100vh;
   scroll-behavior: smooth;
   overflow-y: auto;
+  background: var(--ui-background, hsl(220, 10%, 98%));
+  color: var(--ui-color, #000);
 }
 
 #layout > div {
@@ -140,6 +146,12 @@ a:hover {
   outline: 1px solid rgba(0, 0, 0, 0.3);
 }
 
+.button.-fab {
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+}
+
 .button.-primary {
   background: var(--primary);
   box-shadow: 0 2px 4px hsla(220, 83%, 60%, 0.8);
@@ -152,6 +164,13 @@ a:hover {
 
 .button.-primary:active {
   box-shadow: 0 7px 14px hsla(220, 83%, 40%, 0.3);
+}
+
+/* Theme */
+.dark-theme {
+  --ui-color: #fff;
+  --ui-color-inverted: hsl(220, 90%, 2%);
+  --ui-background: hsl(220, 30%, 5%);
 }
 
 /* Trumps */

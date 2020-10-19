@@ -4,11 +4,14 @@ import Container from "./Container"
 import Menu from "./Menu"
 import MenuLink from "./MenuLink"
 import MenuToggler from "./MenuToggler"
+import Footer from "./Footer"
+import ThemeToggler from "./ThemeToggler"
 
 export default function Layout({ children }) {
   const [scrollY, setScrollY] = useState(0)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isMenuFloating, setIsMenuFloating] = useState(false)
+  const [hasDarkTheme, setHasDarkTheme] = useState(true)
 
   const handleScroll = ({ target: { scrollTop } }) => {
     setScrollY(scrollTop)
@@ -16,7 +19,11 @@ export default function Layout({ children }) {
   }
 
   return (
-    <div id="layout" onScroll={handleScroll}>
+    <div
+      id="layout"
+      className={`${hasDarkTheme ? "dark-theme" : ""}`}
+      onScroll={handleScroll}
+    >
       <HeaderBar floating={isMenuFloating}>
         <MenuToggler
           isActive={isMenuOpen}
@@ -29,17 +36,10 @@ export default function Layout({ children }) {
       </HeaderBar>
 
       <Container className="fade section">{children}</Container>
-      <footer
-        style={{
-          background: "#fff",
-          borderTop: "1px solid rgba(0, 0, 0, 0.12)",
-          textAlign: "center",
-        }}
-      >
-        <Container className="section">
-          Criado e mantido por Lucas Akira Ayabe desde 2020.
-        </Container>
-      </footer>
+
+      <ThemeToggler state={hasDarkTheme} onChange={setHasDarkTheme} />
+
+      <Footer />
     </div>
   )
 }

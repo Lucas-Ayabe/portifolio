@@ -1,5 +1,5 @@
 .header-bar {
-  background: #fff;
+  background: var(--ui-color-inverted, #fff);
   display: flex;
   align-items: center;
   min-height: 70px;
