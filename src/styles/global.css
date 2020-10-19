@@ -170,7 +170,7 @@ a:hover {
 .dark-theme {
   --ui-color: #fff;
   --ui-color-inverted: hsl(220, 90%, 2%);
-  --ui-background: hsl(220, 30%, 5%);
+  --ui-background: hsl(220, 30%, 8%);
 }
 
 /* Trumps */
