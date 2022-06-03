@@ -22,7 +22,7 @@
     "@mdx-js/mdx": "^1.6.18",
     "@mdx-js/react": "^1.6.18",
     "gatsby": "^2.24.50",
-    "gatsby-plugin-mdx": "^1.2.40",
+    "gatsby-plugin-mdx": "^2.14.1",
     "gatsby-plugin-postcss": "^2.3.12",
     "gatsby-source-filesystem": "^2.3.28",
     "gatsby-transformer-remark": "^2.8.33",
